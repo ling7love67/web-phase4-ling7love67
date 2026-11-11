@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Microsoft Yahei", sans-serif;
+    font-size: 16px;
+    overflow-x: hidden; /* 关键：禁止横向滚动条 */
+    padding: 0 12px;
+    color: #333;
+}
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 18px 0;
+    border-radius: 0 0 8px 8px;
+}
+nav {
+    display: flex;
+    gap: 10px;
+    background-color: #34495e;
+    padding: 10px 12px;
+    margin: 10px 0;
+    border-radius: 6px;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+nav a:hover {
+    background-color: #4a647d;
+}
+nav a.active {
+    background-color: #3498db;
+}
+main {
+    margin: 16px 0;
+}
+section {
+    margin-bottom: 20px;
+    padding: 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+section h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #2c3e50;
+}
+ul {
+    list-style: none;
+}
+.skill li {
+    padding: 4px 0;
+}
+.card {
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.card:hover {
+    background-color: #f3f4f6;
+}
+.form-box input {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.form-box button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 6px;
+}
+.filter-box button {
+    padding: 6px 10px;
+    margin: 4px;
+    border: 1px solid #3498db;
+    background: #fff;
+    color: #3498db;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#taskList li {
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+}
+.done {
+    text-decoration: line-through;
+    color: #888;
+}
+footer {
+    text-align: center;
+    padding: 12px;
+    background-color: #2c3e50;
+    color: #fff;
+    border-radius: 8px 8px 0 0;
+    margin-top: 30px;
+}

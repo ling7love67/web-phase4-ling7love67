@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 响应式核心 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端实训个人主页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Microsoft Yahei", sans-serif;
+            background-color: #f4f6f8;
+        }
+        header {
+            background-color: #205b94;
+            color: #fff;
+            padding: 16px;
+            text-align: center;
+        }
+        nav {
+            background-color: #3674b9;
+            padding: 10px 16px;
+        }
+        nav a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 6px 14px;
+            margin-right: 8px;
+            background: #5494d8;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            background: #73adee;
+        }
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .tab-buttons {
+            margin-bottom: 16px;
+        }
+        .tab-btn {
+            padding: 7px 16px;
+            border: none;
+            background: #e2e8f0;
+            cursor: pointer;
+            font-size: 15px;
+            margin-right:6px;
+        }
+        .tab-btn.active {
+            background: #205b94;
+            color: white;
+        }
+        section {
+            background: #fff;
+            padding: 20px;
+            border-radius: 6px;
+            display: none;
+        }
+        section.show {
+            display: block;
+        }
+        section h3 {
+            margin-bottom:12px;
+            color:#205b94;
+        }
+        footer {
+            background-color: #205b94;
+            color: #fff;
+            text-align: center;
+            padding:12px;
+            margin-top:30px;
+        }
+        /* 手机适配 375px */
+        @media (max-width:375px) {
+            nav a {
+                margin:4px 0;
+                width:100%;
+                text-align:center;
+            }
+            .tab-btn {
+                width:100%;
+                margin:4px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h2>前端实训个人主页</h2>
+</header>
+<nav>
+    <a href="index.html">首页</a>
+    <a href="detail.html">项目详情</a>
+</nav>
+<main>
+    <div class="tab-buttons">
+        <button class="tab-btn active" data-id="intro">自我介绍</button>
+        <button class="tab-btn" data-id="skill">技能栈</button>
+        <button class="tab-btn" data-id="project">第一阶段项目</button>
+    </div>
+
+    <section class="show" id="intro">
+        <h3>自我介绍</h3>
+        <p>计算机专业学生，正在学习前端开发，掌握HTML、CSS、JavaScript基础，练习静态页面开发与简单数据交互。</p >
+    </section>
+    <section id="skill">
+        <h3>技能栈</h3>
+        <ul style="padding-left:20px;">
+            <li>HTML5 语义化标签</li>
+            <li>CSS3 响应式布局</li>
+            <li>原生JavaScript DOM操作</li>
+        </ul>
+    </section>
+    <section id="project">
+        <h3>第一阶段项目：任务清单</h3>
+        <p>功能：任务新增、状态切换、列表筛选（全部/已完成/未完成）</p >
+        <p>点击上方导航【项目详情】进入详情页</p >
+    </section>
+</main>
+<footer>
+    <p>© 2026 前端实训作业</p >
+</footer>
+
+<script>
+    // Tab切换 JS交互（满足作业要求）
+    const btns = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('section');
+    btns.forEach(btn=>{
+        btn.onclick = function(){
+            btns.forEach(b=>b.classList.remove('active'));
+            contents.forEach(c=>c.classList.remove('show'));
+            this.classList.add('active');
+            const target = this.dataset.id;
+            document.getElementById(target).classList.add('show');
+        }
+    })
+</script>
+</body>
+</html>
